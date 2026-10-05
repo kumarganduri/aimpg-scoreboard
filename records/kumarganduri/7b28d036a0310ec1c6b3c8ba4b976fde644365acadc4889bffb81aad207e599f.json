@@ -1,0 +1,132 @@
+{
+ "affiliation": null,
+ "aimpg_upload": 2,
+ "baseline": {
+  "agent": "claude",
+  "name": "claude-code"
+ },
+ "challenger": {
+  "agent": "codex",
+  "model": "gpt-6.1-sol",
+  "name": "codex@gpt-6.1-sol"
+ },
+ "claim_kind": "agent",
+ "excluded_commits": 0,
+ "kind": "verify",
+ "public": false,
+ "repo_id": "b8cf92872ce45e3caffc913c",
+ "rerun_of": null,
+ "runs": [
+  {
+   "agent": "claude",
+   "commit": 0,
+   "cost_known": true,
+   "cost_usd": 0.13,
+   "model": "claude-sonnet-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    16,
+    22000,
+    170000,
+    4000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.66,
+    8.41
+   ]
+  },
+  {
+   "agent": "codex",
+   "commit": 0,
+   "cost_known": true,
+   "cost_usd": 0.1,
+   "model": "gpt-6.1-sol",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "codex@gpt-6.1-sol",
+   "tokens": [
+    24,
+    28000,
+    140000,
+    1800
+   ],
+   "tokens_check": "unverified (codex rollout log)",
+   "wall_s": 50,
+   "wh": [
+    0.51,
+    6.72
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": 1,
+   "cost_known": true,
+   "cost_usd": 0.09,
+   "model": "claude-sonnet-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    12,
+    20000,
+    110000,
+    1600
+   ],
+   "tokens_check": "ok",
+   "wall_s": 20,
+   "wh": [
+    0.39,
+    5.13
+   ]
+  },
+  {
+   "agent": "codex",
+   "commit": 1,
+   "cost_known": true,
+   "cost_usd": 0.09,
+   "model": "gpt-6.1-sol",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "codex@gpt-6.1-sol",
+   "tokens": [
+    30,
+    24000,
+    170000,
+    1000
+   ],
+   "tokens_check": "unverified (codex rollout log)",
+   "wall_s": 40,
+   "wh": [
+    0.38,
+    5.15
+   ]
+  }
+ ],
+ "superseded_attempts": 0,
+ "task_mode": "tests",
+ "verdict": {
+  "answer": "SUPPORTED",
+  "cost_ratio": 0.8887,
+  "energy": null
+ },
+ "versions": {
+  "aimpg": "0.2.0",
+  "claude": "2.1",
+  "codex": "0.159",
+  "factors": "2026-10-03b",
+  "prices": "2026-10-03b"
+ },
+ "week": "2026-W41"
+}
