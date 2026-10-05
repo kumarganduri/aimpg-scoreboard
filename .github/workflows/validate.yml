@@ -1,0 +1,39 @@
+# Checks every submission. Runs on `pull_request` (never pull_request_target):
+# the token is read-only, and records are only parsed as data, never executed.
+name: validate
+on:
+  pull_request:
+permissions:
+  contents: read
+env:
+  AIMPG: "aimpg==0.4.3"  # the rules live in aimpg/scoreboard.py, pinned here
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v6
+      - name: only your own records may change
+        id: files
+        env:
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          added=""
+          while IFS=$'\t' read -r status path; do
+            case "$status:$path" in
+              A:records/"$AUTHOR"/*.json) added="$added $path" ;;
+              D:records/"$AUTHOR"/*.json) echo "withdrawn: $path" ;;
+              *) echo "::error::$status $path: a submission may only add or delete files under records/$AUTHOR/"; exit 1 ;;
+            esac
+          done < <(git diff --name-status "$BASE" HEAD)
+          echo "added=$added" >> "$GITHUB_OUTPUT"
+      - name: check the records
+        if: steps.files.outputs.added != ''
+        env:
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          uvx --from "$AIMPG" aimpg scoreboard validate ${{ steps.files.outputs.added }} --author "$AUTHOR" | tee -a "$GITHUB_STEP_SUMMARY"
