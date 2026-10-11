@@ -1,0 +1,3 @@
+# Changes to the checks, the page build and the vendor list need the maintainer's review.
+/.github/ @kumarganduri
+/vendors.json @kumarganduri

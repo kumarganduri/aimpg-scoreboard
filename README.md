@@ -56,7 +56,9 @@ Copies others already downloaded can't be recalled.
 - `records/<github-username>/<sha256>.json`: one file per submission; the file name is the SHA-256 of its content.
 - `.github/workflows/validate.yml`: on every pull request, checks that you only add or delete your own files, then
   runs `aimpg scoreboard validate`: format, privacy, consistency, complete runs and the verdict arithmetic.
-  It uses `pull_request` (a read-only token) and never executes anything from a record.
+  It runs from this repo's own copy of the checks (`pull_request_target`), downloads only the submitted record
+  files as data with a read-only token, and never runs anything from the pull request. Pull requests that touch
+  `.github/` or `vendors.json` are never merged on a green check (CODEOWNERS).
 - `.github/workflows/pages.yml`: on merge, `aimpg scoreboard build` makes the page (rules in
   [aimpg/scoreboard.py](https://github.com/kumarganduri/aimpg/blob/main/aimpg/scoreboard.py)).
 - Data license: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

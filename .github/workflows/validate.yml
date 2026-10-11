@@ -1,39 +1,52 @@
-# Checks every submission. Runs on `pull_request` (never pull_request_target):
-# the token is read-only, and records are only parsed as data, never executed.
+# Checks every submission.
+# Runs from the base branch (pull_request_target), so a pull request can't change these checks.
+# It never checks out or runs the pull request's code: it downloads only the submitted record
+# files, as data, with a read-only token.
 name: validate
 on:
-  pull_request:
+  pull_request_target:
 permissions:
   contents: read
+  pull-requests: read
 env:
-  AIMPG: "aimpg==0.4.3"  # the rules live in aimpg/scoreboard.py, pinned here
+  AIMPG: "aimpg==0.6.1"  # the rules live in aimpg/scoreboard.py, pinned here
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e  # v6
         with:
-          fetch-depth: 0
-      - uses: astral-sh/setup-uv@v6
-      - name: only your own records may change
-        id: files
+          version: "0.11.29"
+      - name: fetch the submitted files, as data
         env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
           AUTHOR: ${{ github.event.pull_request.user.login }}
-          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          added=""
+          mkdir -p "$RUNNER_TEMP/pr"
+          : > "$RUNNER_TEMP/added.txt"
+          gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[] | [.status, .filename] | @tsv' > "$RUNNER_TEMP/files.tsv"
           while IFS=$'\t' read -r status path; do
-            case "$status:$path" in
-              A:records/"$AUTHOR"/*.json) added="$added $path" ;;
-              D:records/"$AUTHOR"/*.json) echo "withdrawn: $path" ;;
-              *) echo "::error::$status $path: a submission may only add or delete files under records/$AUTHOR/"; exit 1 ;;
-            esac
-          done < <(git diff --name-status "$BASE" HEAD)
-          echo "added=$added" >> "$GITHUB_OUTPUT"
+            if [[ "$status" == "removed" && "$path" =~ ^records/${AUTHOR}/[0-9a-f]{64}\.json$ ]]; then
+              echo "withdrawn: $path"; continue
+            fi
+            if [[ "$status" != "added" || ! "$path" =~ ^records/[A-Za-z0-9-]+/[0-9a-f]{64}\.json$ ]]; then
+              echo "::error::$status $path: a submission may only add records/<your-username>/<sha256>.json, or delete your own"
+              exit 1
+            fi
+            mkdir -p "$RUNNER_TEMP/pr/$(dirname "$path")"
+            gh api -H "Accept: application/vnd.github.raw" "repos/$HEAD_REPO/contents/$path?ref=$HEAD_SHA" > "$RUNNER_TEMP/pr/$path"
+            echo "$RUNNER_TEMP/pr/$path" >> "$RUNNER_TEMP/added.txt"
+          done < "$RUNNER_TEMP/files.tsv"
       - name: check the records
-        if: steps.files.outputs.added != ''
         env:
           AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
-          uvx --from "$AIMPG" aimpg scoreboard validate ${{ steps.files.outputs.added }} --author "$AUTHOR" | tee -a "$GITHUB_STEP_SUMMARY"
+          set -euo pipefail
+          mapfile -t files < "$RUNNER_TEMP/added.txt"
+          if [ ${#files[@]} -eq 0 ]; then echo "Nothing to check."; exit 0; fi
+          uvx --from "$AIMPG" aimpg scoreboard validate --author "$AUTHOR" -- "${files[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
