@@ -135,7 +135,7 @@ footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
         <h2>See your receipt</h2>
         <p>Your last 30 days: energy, dollars, commits, the cost of a typical kept commit, and the two habits that would have saved the most, measured on your own logs.</p>
         <div class="cmd"><pre>aimpg report</pre><button type="button" data-copy>Copy</button></div>
-        <p class="note">Using Cursor? Cursor keeps its token counts online: download them at cursor.com/dashboard → Usage → Export CSV, then add <code>--cursor-usage ~/Downloads/usage-events.csv</code>.</p>
+        <p class="note">Want to post it? Add <code>--share</code> for a card with your totals only. Using Cursor? Cursor keeps its token counts online: download them at cursor.com/dashboard → Usage → Export CSV, then add <code>--cursor-usage ~/Downloads/usage-events.csv</code>.</p>
       </div>
     </li>
     <li class="step">
@@ -173,7 +173,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: {fetch-depth: 0}
-      - uses: kumarganduri/aimpg@v0.6.1
+      - uses: kumarganduri/aimpg@v0.6.2
         with:
           mode: ${{ github.event_name == 'pull_request' &amp;&amp; 'pr' || 'rollup' }}
           comment: "true"</pre><button type="button" data-copy data-skip-first-line>Copy</button></div>
