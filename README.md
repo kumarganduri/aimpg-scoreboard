@@ -7,6 +7,8 @@ projects.
 
 **Page:** https://kumarganduri.github.io/aimpg-scoreboard
 
+**New to aimpg?** [aimpg in 5 minutes](https://kumarganduri.github.io/aimpg-scoreboard/start/): install, first numbers, and the team GitHub Action.
+
 ## Add your result
 
 ```bash

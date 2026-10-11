@@ -21,6 +21,7 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: uvx --from "$AIMPG" aimpg scoreboard build records site --vendors vendors.json
       - run: cp -R records site/records  # raw records, linked from the page
+      - run: cp -R start site/start  # the 5-minute walkthrough
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

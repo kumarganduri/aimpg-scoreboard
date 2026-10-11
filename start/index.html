@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Install aimpg and see what your AI coding really costs per change that ships, in five minutes.">
+<title>aimpg in 5 Minutes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column paced like a stopwatch — each step carries its elapsed time on a left rail that fills toward 5:00. */
+:root {
+  --bg: #eef2f0;
+  --paper: #f8faf9;
+  --ink: #13302f;
+  --muted: #557069;
+  --line: #cfdcd7;
+  --accent: #c27a00;      /* fuel-gauge needle */
+  --accent-soft: #f6e6c6;
+  --code-bg: #10292a;
+  --code-fg: #dcebe6;
+  --ok: #1d7a4f;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1a1b; --paper: #132426; --ink: #e2ece8; --muted: #93aaa3; --line: #24393a;
+    --accent: #f0ad3a; --accent-soft: #3a2c12; --code-bg: #081314; --code-fg: #d6e6e1; --ok: #5cc493;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1a1b; --paper: #132426; --ink: #e2ece8; --muted: #93aaa3; --line: #24393a;
+  --accent: #f0ad3a; --accent-soft: #3a2c12; --code-bg: #081314; --code-fg: #d6e6e1; --ok: #5cc493;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 var(--body); }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; }
+h1, h2 { font-family: var(--display); font-stretch: 112%; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(34px, 7vw, 54px); line-height: 1.02; font-weight: 800; }
+h2 { font-size: 22px; font-weight: 600; line-height: 1.2; }
+p { margin: 0; max-width: 65ch; }
+a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.lede { color: var(--muted); font-size: 18px; margin-top: 14px; }
+header { display: grid; gap: 14px; }
+
+/* the sample receipt in the opener */
+.receipt { margin-top: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; font: 14px/1.7 var(--mono); overflow-x: auto; }
+.receipt .k { color: var(--muted); }
+.receipt .v { color: var(--ink); font-weight: 500; }
+.receipt .tip { color: var(--accent); }
+.receipt small { display: block; margin-top: 8px; color: var(--muted); font-family: var(--body); font-size: 12px; }
+
+/* steps on a stopwatch rail */
+ol.steps { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: 0; }
+.step { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 18px; }
+.rail { display: flex; flex-direction: column; align-items: center; }
+.time { font: 600 13px/1 var(--mono); font-variant-numeric: tabular-nums; color: var(--ink); background: var(--accent-soft); border-radius: 99px; padding: 6px 9px; white-space: nowrap; }
+.rail::after { content: ""; flex: 1; width: 2px; background: var(--line); margin-top: 8px; }
+.step:last-child .rail::after { display: none; }
+.content { display: grid; gap: 12px; padding-bottom: 40px; min-width: 0; }
+.content p { color: var(--ink); }
+.content .note { color: var(--muted); font-size: 14px; }
+
+/* commands */
+.cmd { position: relative; background: var(--code-bg); color: var(--code-fg); border-radius: 8px; font: 14px/1.6 var(--mono); }
+.cmd pre { margin: 0; padding: 14px 92px 14px 16px; overflow-x: auto; white-space: pre; }
+.cmd button { position: absolute; top: 9px; right: 9px; font: 500 12px/1 var(--body); color: var(--code-fg); background: transparent; border: 1px solid #3d5a59; border-radius: 6px; padding: 7px 10px; cursor: pointer; }
+.cmd button:hover { border-color: var(--accent); }
+.cmd button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cmd button.done { color: var(--ok); border-color: var(--ok); }
+.out { background: var(--paper); border: 1px dashed var(--line); border-radius: 8px; padding: 12px 14px; font: 13px/1.6 var(--mono); color: var(--muted); overflow-x: auto; white-space: pre; }
+
+/* privacy + extras */
+section { margin-top: 24px; display: grid; gap: 14px; }
+.privacy { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 22px 20px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 9px 10px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 12px/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+td.yes { color: var(--ok); font-weight: 600; white-space: nowrap; }
+td.no { color: var(--muted); white-space: nowrap; }
+.more { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.more div { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.more code { font: 13px/1.5 var(--mono); color: var(--accent); overflow-wrap: anywhere; }
+.more p { font-size: 15px; color: var(--muted); }
+footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: grid; gap: 6px; }
+@media (max-width: 520px) {
+  .step { grid-template-columns: 52px minmax(0, 1fr); gap: 12px; }
+  .cmd pre { padding-right: 16px; padding-top: 46px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cmd button { transition: border-color .15s, color .15s; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">aimpg · miles per gallon for AI coding</div>
+    <h1>What does your AI coding really cost per change that ships?</h1>
+    <p class="lede">Five minutes from install to your first numbers. aimpg reads the Claude Code, Codex and Cursor logs already on your laptop. Nothing leaves your machine unless you choose.</p>
+  </header>
+
+  <div class="receipt" aria-label="Example receipt">
+<span class="k">YOUR AI CODING</span>
+<span class="k">  Energy </span>  <span class="v">14.46 – 130.59 kWh</span>  <span class="k">≈ boiling a kettle 140–1,300 times</span>
+<span class="k">  Money  </span>  <span class="v">$1,284</span> <span class="k">API-equivalent</span>
+<span class="k">  Output </span>  <span class="v">353 commits</span> <span class="k">made with AI help</span>
+<span class="k">  A typical kept commit:</span> <span class="v">$2.05</span>
+<span class="tip">  Start a fresh session after each commit: up to 45% less energy, $397</span>
+<small>A real receipt from one developer's last 30 days. Energy is a range because model sizes aren't public.</small>
+  </div>
+
+  <ol class="steps">
+    <li class="step">
+      <div class="rail"><span class="time">0:00</span></div>
+      <div class="content">
+        <h2>Install</h2>
+        <p>One command with <a href="https://docs.astral.sh/uv/" target="_blank" rel="noopener">uv</a>, the Python tool installer.</p>
+        <div class="cmd"><pre>uv tool install aimpg</pre><button type="button" data-copy>Copy</button></div>
+        <p class="note">No uv yet? <code>curl -LsSf https://astral.sh/uv/install.sh | sh</code> first. Works on macOS and Linux.</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="rail"><span class="time">0:30</span></div>
+      <div class="content">
+        <h2>See your receipt</h2>
+        <p>Your last 30 days: energy, dollars, commits, the cost of a typical kept commit, and the two habits that would have saved the most, measured on your own logs.</p>
+        <div class="cmd"><pre>aimpg report</pre><button type="button" data-copy>Copy</button></div>
+        <p class="note">Using Cursor? Cursor keeps its token counts online: download them at cursor.com/dashboard → Usage → Export CSV, then add <code>--cursor-usage ~/Downloads/usage-events.csv</code>.</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="rail"><span class="time">1:30</span></div>
+      <div class="content">
+        <h2>Watch it live while you work</h2>
+        <p>A status line inside Claude Code shows what the current task has cost compared with your usual, and when starting fresh would save the most. After each commit you get one short note. It's never sent to the model.</p>
+        <div class="cmd"><pre>aimpg live install</pre><button type="button" data-copy>Copy</button></div>
+        <div class="out">⚡ task $1.96 · usual $2.05 · ctx 160k (92% from before your last commit) · /clear ≈ -92% per request</div>
+        <p class="note">It shows the change and asks first, and keeps a backup. Undo with <code>aimpg live uninstall</code>.</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="rail"><span class="time">2:30</span></div>
+      <div class="content">
+        <h2>Share your numbers with your team</h2>
+        <p>Adds a small note to each of <em>your own</em> AI-assisted commits (cost, energy range, request count) and pushes it with git. It never includes prompts or code. Each person on the team runs it for themselves.</p>
+        <div class="cmd"><pre>aimpg notes push</pre><button type="button" data-copy>Copy</button></div>
+      </div>
+    </li>
+    <li class="step">
+      <div class="rail"><span class="time">3:00</span></div>
+      <div class="content">
+        <h2>Add the GitHub Action</h2>
+        <p>One file in the repo. Every pull request gets a comment with its AI cost. Every Monday, the run summary shows the team's <strong>cost per working change</strong> (commits still standing after 30 days), how much spend went on work that didn't last, and the weekly trend.</p>
+        <div class="cmd"><pre>.github/workflows/aimpg.yml
+
+on:
+  pull_request:
+  schedule: [{cron: "0 8 * * 1"}]
+permissions: {contents: read, pull-requests: write}
+jobs:
+  aimpg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: kumarganduri/aimpg@v0.6.0
+        with:
+          mode: ${{ github.event_name == 'pull_request' &amp;&amp; 'pr' || 'rollup' }}
+          comment: "true"</pre><button type="button" data-copy data-skip-first-line>Copy</button></div>
+        <div class="out">⚡ AI cost of this pull request
+$4.10 API-equivalent · 0.20–1.90 kWh · 9 model requests</div>
+        <p class="note">Team numbers appear only once at least 5 people share notes, and never per person.</p>
+      </div>
+    </li>
+    <li class="step">
+      <div class="rail"><span class="time">5:00</span></div>
+      <div class="content">
+        <h2>Done</h2>
+        <p>You now see the cost while you work, every pull request shows its cost, and the team gets a weekly number to improve: cost per working change. The first working-change verdicts arrive once your commits are 30 days old; aimpg keeps the history so it can tell.</p>
+      </div>
+    </li>
+  </ol>
+
+  <section class="privacy" aria-labelledby="privacy-h">
+    <h2 id="privacy-h">What leaves your machine</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Command</th><th>Sends anything?</th><th>What</th></tr></thead>
+        <tbody>
+          <tr><td><code>aimpg report</code>, <code>live</code>, <code>sci</code>, <code>defaults</code></td><td class="no">No</td><td>Reads local logs and git only.</td></tr>
+          <tr><td><code>aimpg notes push</code></td><td class="yes">Your repo</td><td>Per-commit cost, energy range and request count, on your own commits. Anyone who can read the repo can read the notes.</td></tr>
+          <tr><td><code>aimpg submit</code></td><td class="yes">Public scoreboard</td><td>A stripped copy of a <code>verify</code> result. It shows you the exact file and asks first.</td></tr>
+          <tr><td>Anything</td><td class="no">Never</td><td>Prompts, code, diffs, commit messages, API keys.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="more-h">
+    <h2 id="more-h">When you have more than five minutes</h2>
+    <div class="more">
+      <div><code>aimpg verify --challenger rtk</code><p>Check whether a token-saver, prompt, cheaper model or another agent really saves money on <em>your</em> commits. Your own tests decide. About $0.10–0.30 per run, and it asks before spending.</p></div>
+      <div><code>aimpg defaults --apply</code><p>Turn a result like "Sonnet solves our tasks at a third of Opus's cost" into the repo's default model for the whole team.</p></div>
+      <div><code>aimpg sci --json sci.json</code><p>Carbon intensity in the Green Software Foundation's SCI for AI format, for a sustainability report.</p></div>
+      <div><code>aimpg submit</code><p>Add your verified result to the <a href="https://kumarganduri.github.io/aimpg-scoreboard" target="_blank" rel="noopener">public scoreboard</a>, where results from many repos add up.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Free and open source: <a href="https://github.com/kumarganduri/aimpg" target="_blank" rel="noopener">github.com/kumarganduri/aimpg</a> · <a href="https://pypi.org/project/aimpg/" target="_blank" rel="noopener">PyPI</a></p>
+    <p>Dollars use Anthropic's and OpenAI's published API prices; for subscription users they show what the same work would cost on the API, not a bill.</p>
+  </footer>
+</div>
+
+<script>
+document.querySelectorAll("[data-copy]").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var pre = btn.parentElement.querySelector("pre");
+    var text = pre.textContent;
+    if (btn.hasAttribute("data-skip-first-line")) text = text.split("\n").slice(2).join("\n");
+    var done = function () { btn.textContent = "Copied"; btn.classList.add("done"); setTimeout(function () { btn.textContent = "Copy"; btn.classList.remove("done"); }, 1600); };
+    var fallback = function () {
+      var range = document.createRange(); range.selectNodeContents(pre);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      btn.textContent = "Selected: press ⌘C";
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } catch (e) { fallback(); }
+  });
+});
+</script>
+
+</body>
+</html>
