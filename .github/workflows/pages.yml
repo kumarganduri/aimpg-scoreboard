@@ -12,7 +12,7 @@ concurrency:
   group: pages
   cancel-in-progress: true
 env:
-  AIMPG: "aimpg==0.6.1"
+  AIMPG: "aimpg==0.7.0"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +24,7 @@ jobs:
       - run: uvx --from "$AIMPG" aimpg scoreboard build records site --vendors vendors.json
       - run: cp -R records site/records  # raw records, linked from the page
       - run: cp -R start site/start  # the 5-minute walkthrough
+      - run: cp -R report-1 site/report-1  # AI Coding MPG Report No. 1
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa  # v3
         with:
           path: site
