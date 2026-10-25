@@ -17,6 +17,12 @@ jobs:
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e  # v6
         with:
           version: "0.11.29"
+      # The base branch's records (never the pull request's), so a submission can't reuse another submitter's repo_id
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
+        with:
+          path: base
+          sparse-checkout: records
+          persist-credentials: false
       - name: fetch the submitted files, as data
         env:
           GH_TOKEN: ${{ github.token }}
@@ -49,4 +55,4 @@ jobs:
           set -euo pipefail
           mapfile -t files < "$RUNNER_TEMP/added.txt"
           if [ ${#files[@]} -eq 0 ]; then echo "Nothing to check."; exit 0; fi
-          uvx --from "$AIMPG" aimpg scoreboard validate --author "$AUTHOR" -- "${files[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
+          uvx --from "$AIMPG" aimpg scoreboard validate --author "$AUTHOR" --records base/records -- "${files[@]}" | tee -a "$GITHUB_STEP_SUMMARY"
