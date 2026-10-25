@@ -40,7 +40,7 @@ aimpg submit ~/.aimpg/verify/<the record>.record.json    # shows exactly what's 
   - **Self-reported:** shown separately, labeled "not audited".
   - **Disputed:** a rerun disagreed. Both are shown; neither counts.
 - **Vendors:** records from accounts listed in [`vendors.json`](vendors.json) about their own product count only once reproduced by someone else. Please state your affiliation when you submit.
-- **Every run counts**, failures included. Incomplete records are rejected, and redone attempts are listed.
+- **Every run counts**, failures included. Incomplete records are rejected, and every redone attempt is listed in the raw record.
 
 **What this can't prove:** `aimpg verify --check` confirms a record's arithmetic and consistency, not that its
 runs happened. A determined person can fake a self-reported record, which is why only independent reruns reach

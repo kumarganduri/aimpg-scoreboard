@@ -106,7 +106,7 @@ footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
   <header>
     <div class="eyebrow">aimpg · miles per gallon for AI coding</div>
     <h1>What does your AI coding really cost per change that ships?</h1>
-    <p class="lede">Five minutes from install to your first numbers. aimpg reads the Claude Code, Codex and Cursor logs already on your laptop. Nothing leaves your machine unless you choose.</p>
+    <p class="lede">Five minutes from install to your first numbers. aimpg reads the Claude Code and Codex logs already on your laptop, and Cursor's usage export. Nothing leaves your machine unless you choose.</p>
   </header>
 
   <div class="receipt" aria-label="Example receipt">
@@ -133,9 +133,9 @@ footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
       <div class="rail"><span class="time">0:30</span></div>
       <div class="content">
         <h2>See your receipt</h2>
-        <p>Your last 30 days: energy, dollars, commits, the cost of a typical kept commit, and the two habits that would have saved the most, measured on your own logs.</p>
+        <p>Your last 30 days: energy, dollars, commits, the cost of a typical kept commit, and what would have saved the most, measured on your own logs.</p>
         <div class="cmd"><pre>aimpg report</pre><button type="button" data-copy>Copy</button></div>
-        <p class="note">Want to post it? Add <code>--share</code> for a card with your totals only. Using Cursor? Cursor keeps its token counts online: download them at cursor.com/dashboard → Usage → Export CSV, then add <code>--cursor-usage ~/Downloads/usage-events.csv</code>.</p>
+        <p class="note">Want to post it? Add <code>--share</code> for a card with your totals only. Using Cursor? Cursor keeps its token counts online: download them at cursor.com/dashboard → Usage → Export CSV, then add <code>--cursor-usage ~/Downloads/usage-events.csv --cursor-repo ~/code/yourproject</code> so its usage is matched to that repo's commits.</p>
       </div>
     </li>
     <li class="step">
@@ -200,7 +200,9 @@ $4.10 API-equivalent · 0.20–1.90 kWh · 9 model requests</div>
           <tr><td><code>aimpg report</code>, <code>live</code>, <code>sci</code>, <code>defaults</code></td><td class="no">No</td><td>Reads local logs and git only.</td></tr>
           <tr><td><code>aimpg notes push</code></td><td class="yes">Your repo</td><td>Per-commit cost, energy range and request count, on your own commits. Anyone who can read the repo can read the notes.</td></tr>
           <tr><td><code>aimpg submit</code></td><td class="yes">Public scoreboard</td><td>A stripped copy of a <code>verify</code> result. It shows you the exact file and asks first.</td></tr>
-          <tr><td>Anything</td><td class="no">Never</td><td>Prompts, code, diffs, commit messages, API keys.</td></tr>
+          <tr><td><code>aimpg pr --post</code></td><td class="yes">Your pull request</td><td>The branch's AI cost, with commit subjects, as a PR comment.</td></tr>
+          <tr><td><code>aimpg verify</code>, <code>replay</code>, <code>study</code></td><td class="yes">The model API you choose</td><td>These run AI agents on your repo, so the code and commit messages they work on go to Anthropic or OpenAI, as when you use the agent yourself.</td></tr>
+          <tr><td>Anything</td><td class="no">Never</td><td>Nothing is sent to aimpg. API keys never leave your shell.</td></tr>
         </tbody>
       </table>
     </div>
