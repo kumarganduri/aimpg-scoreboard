@@ -1,0 +1,852 @@
+[
+ {
+  "baseline": "claude-code",
+  "challenger": "claude-code@haiku",
+  "repos": 8,
+  "commits": 56,
+  "solve_ci": {
+   "claude-code": [
+    0.4310671078829754,
+    0.5805715270135169
+   ],
+   "claude-code@haiku": [
+    0.4194284729864831,
+    0.5689328921170246
+   ]
+  },
+  "cost_per_attempt": {
+   "claude-code": 0.09858421607142856,
+   "claude-code@haiku": 0.01603025895833333
+  },
+  "ratio_per_solved": 0.16652290714204843,
+  "ratio_per_solved_ci": [
+   0.13764007243023238,
+   0.1983647867625919
+  ],
+  "ratio_tokens": 3.4579313747898794,
+  "ratio_tokens_ci": [
+   2.868505915451339,
+   4.111629423758569
+  ],
+  "p_per_solved": 0.0,
+  "cheaper_in_repos": 8,
+  "per_repo": {
+   "https://github.com/axios/axios": {
+    "ratio_per_solved": 0.1566601101036018,
+    "ratio_tokens": 3.6335545048015723,
+    "ratio_per_attempt": 0.1566601101036018,
+    "solved": {
+     "claude-code": 12,
+     "claude-code@haiku": 12
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pallets/click": {
+    "ratio_per_solved": 0.10999456911141647,
+    "ratio_tokens": 3.584614985068903,
+    "ratio_per_attempt": 0.18332428185236077,
+    "solved": {
+     "claude-code": 3,
+     "claude-code@haiku": 5
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/homebridge/homebridge": {
+    "ratio_per_solved": 0.11341503855025009,
+    "ratio_tokens": 2.205842365071452,
+    "ratio_per_attempt": 0.1071142030752362,
+    "solved": {
+     "claude-code": 18,
+     "claude-code@haiku": 17
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/lint-staged/lint-staged": {
+    "ratio_per_solved": 0.11078302299850755,
+    "ratio_tokens": 3.2882589405847003,
+    "ratio_per_attempt": 0.16617453449776132,
+    "solved": {
+     "claude-code": 4,
+     "claude-code@haiku": 6
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/litestar-org/litestar": {
+    "ratio_per_solved": 0.1826921458012725,
+    "ratio_tokens": 2.963039571966504,
+    "ratio_per_attempt": 0.146153716641018,
+    "solved": {
+     "claude-code": 15,
+     "claude-code@haiku": 12
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pyinfra-dev/pyinfra": {
+    "ratio_per_solved": 0.15288036148352668,
+    "ratio_tokens": 3.4014272947908206,
+    "ratio_per_attempt": 0.15288036148352666,
+    "solved": {
+     "claude-code": 3,
+     "claude-code@haiku": 3
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/recharts/recharts": {
+    "ratio_per_solved": 0.24261144807052326,
+    "ratio_tokens": 5.122171908227851,
+    "ratio_per_attempt": 0.24261144807052326,
+    "solved": {
+     "claude-code": 18,
+     "claude-code@haiku": 18
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/Kludex/starlette": {
+    "ratio_per_solved": 0.1854783560029442,
+    "ratio_tokens": 3.7123233933004385,
+    "ratio_per_attempt": 0.1545652966691202,
+    "solved": {
+     "claude-code": 12,
+     "claude-code@haiku": 10
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@haiku": 21
+    },
+    "commits": 7
+   }
+  },
+  "p_holm": 0.0,
+  "headline": true,
+  "primary": "per_solved",
+  "ratio_per_attempt": 0.16260472109164728,
+  "ratio_per_attempt_ci": [
+   0.13623498932533304,
+   0.19122576663694252
+  ],
+  "arms": {
+   "claude-code": {
+    "setup": "claude-code",
+    "runs": 168,
+    "solved": 85,
+    "usd": 16.562148299999997,
+    "tokens": 28201706
+   },
+   "claude-code@haiku": {
+    "setup": "claude-code@haiku",
+    "runs": 168,
+    "solved": 83,
+    "usd": 2.6930835049999997,
+    "tokens": 97519564
+   }
+  }
+ },
+ {
+  "baseline": "claude-code",
+  "challenger": "claude-code@opus",
+  "repos": 8,
+  "commits": 56,
+  "solve_ci": {
+   "claude-code": [
+    0.4310671078829754,
+    0.5805715270135169
+   ],
+   "claude-code@opus": [
+    0.5377032484882818,
+    0.6834308145450723
+   ]
+  },
+  "cost_per_attempt": {
+   "claude-code": 0.09858421607142856,
+   "claude-code@opus": 0.31235879761904756
+  },
+  "ratio_per_solved": 2.6147372627184855,
+  "ratio_per_solved_ci": [
+   1.9330363852471295,
+   3.2827043978132737
+  ],
+  "ratio_tokens": 1.9747296493339797,
+  "ratio_tokens_ci": [
+   1.68996554785918,
+   2.3341432421430386
+  ],
+  "p_per_solved": 0.0005,
+  "cheaper_in_repos": 0,
+  "per_repo": {
+   "https://github.com/axios/axios": {
+    "ratio_per_solved": 2.403024819793263,
+    "ratio_tokens": 1.7043629031364598,
+    "ratio_per_attempt": 2.803528956425473,
+    "solved": {
+     "claude-code": 12,
+     "claude-code@opus": 14
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pallets/click": {
+    "ratio_per_solved": 1.041552460712023,
+    "ratio_tokens": 1.6749209314786346,
+    "ratio_per_attempt": 2.7774732285653947,
+    "solved": {
+     "claude-code": 3,
+     "claude-code@opus": 8
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/homebridge/homebridge": {
+    "ratio_per_solved": 2.312218884765099,
+    "ratio_tokens": 1.5357700055040533,
+    "ratio_per_attempt": 2.569132094183443,
+    "solved": {
+     "claude-code": 18,
+     "claude-code@opus": 20
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/lint-staged/lint-staged": {
+    "ratio_per_solved": 1.3820782837961216,
+    "ratio_tokens": 1.9326362563738106,
+    "ratio_per_attempt": 3.1096761385412734,
+    "solved": {
+     "claude-code": 4,
+     "claude-code@opus": 9
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/litestar-org/litestar": {
+    "ratio_per_solved": 3.9328415322389145,
+    "ratio_tokens": 2.8396695034050152,
+    "ratio_per_attempt": 4.457220403204103,
+    "solved": {
+     "claude-code": 15,
+     "claude-code@opus": 17
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pyinfra-dev/pyinfra": {
+    "ratio_per_solved": 2.7086733360466893,
+    "ratio_tokens": 2.3315839635288644,
+    "ratio_per_attempt": 3.6115644480622517,
+    "solved": {
+     "claude-code": 3,
+     "claude-code@opus": 4
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/recharts/recharts": {
+    "ratio_per_solved": 3.581464934816632,
+    "ratio_tokens": 2.0920699287706515,
+    "ratio_per_attempt": 3.5814649348166316,
+    "solved": {
+     "claude-code": 18,
+     "claude-code@opus": 18
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/Kludex/starlette": {
+    "ratio_per_solved": 2.702113955362293,
+    "ratio_tokens": 1.938718794800808,
+    "ratio_per_attempt": 2.9272901183091506,
+    "solved": {
+     "claude-code": 12,
+     "claude-code@opus": 13
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code@opus": 21
+    },
+    "commits": 7
+   }
+  },
+  "p_holm": 0.0015,
+  "headline": true,
+  "primary": "per_solved",
+  "ratio_per_attempt": 3.1684463301176935,
+  "ratio_per_attempt_ci": [
+   2.7750990073185666,
+   3.672446050604921
+  ],
+  "arms": {
+   "claude-code": {
+    "setup": "claude-code",
+    "runs": 168,
+    "solved": 85,
+    "usd": 16.562148299999997,
+    "tokens": 28201706
+   },
+   "claude-code@opus": {
+    "setup": "claude-code@opus",
+    "runs": 168,
+    "solved": 103,
+    "usd": 52.47627799999999,
+    "tokens": 55690745
+   }
+  }
+ },
+ {
+  "baseline": "claude-code",
+  "challenger": "codex@gpt-6.1-sol",
+  "repos": 8,
+  "commits": 56,
+  "solve_ci": {
+   "claude-code": [
+    0.4310671078829754,
+    0.5805715270135169
+   ],
+   "codex@gpt-6.1-sol": [
+    0.4958239558052347,
+    0.6438396629526729
+   ]
+  },
+  "cost_per_attempt": {
+   "claude-code": 0.09858421607142856,
+   "codex@gpt-6.1-sol": 0.12155842261904759
+  },
+  "ratio_per_solved": 1.0917554315452744,
+  "ratio_per_solved_ci": [
+   0.765222923984725,
+   1.4105472287000589
+  ],
+  "ratio_tokens": 1.6058016490208071,
+  "ratio_tokens_ci": [
+   1.190442740895839,
+   2.1181596365683393
+  ],
+  "p_per_solved": 0.543,
+  "cheaper_in_repos": 3,
+  "per_repo": {
+   "https://github.com/axios/axios": {
+    "ratio_per_solved": 1.1999488094253399,
+    "ratio_tokens": 1.675370373285892,
+    "ratio_per_attempt": 1.2999445435441184,
+    "solved": {
+     "claude-code": 12,
+     "codex@gpt-6.1-sol": 13
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pallets/click": {
+    "ratio_per_solved": 0.4688422914251705,
+    "ratio_tokens": 1.0564575701238248,
+    "ratio_per_attempt": 0.9376845828503408,
+    "solved": {
+     "claude-code": 3,
+     "codex@gpt-6.1-sol": 6
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/homebridge/homebridge": {
+    "ratio_per_solved": 0.8384628519551203,
+    "ratio_tokens": 0.9475117933703536,
+    "ratio_per_attempt": 0.8850441215081826,
+    "solved": {
+     "claude-code": 18,
+     "codex@gpt-6.1-sol": 19
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/lint-staged/lint-staged": {
+    "ratio_per_solved": 0.4690123306322046,
+    "ratio_tokens": 1.4575597706463164,
+    "ratio_per_attempt": 1.2897839092385626,
+    "solved": {
+     "claude-code": 4,
+     "codex@gpt-6.1-sol": 11
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/litestar-org/litestar": {
+    "ratio_per_solved": 1.4419299545045008,
+    "ratio_tokens": 1.5899877717498856,
+    "ratio_per_attempt": 1.4419299545045008,
+    "solved": {
+     "claude-code": 15,
+     "codex@gpt-6.1-sol": 15
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pyinfra-dev/pyinfra": {
+    "ratio_per_solved": 1.3728875430955207,
+    "ratio_tokens": 2.6849498920589903,
+    "ratio_per_attempt": 1.3728875430955207,
+    "solved": {
+     "claude-code": 3,
+     "codex@gpt-6.1-sol": 3
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/recharts/recharts": {
+    "ratio_per_solved": 1.6410813486728866,
+    "ratio_tokens": 2.4340122121858285,
+    "ratio_per_attempt": 1.8234237207476518,
+    "solved": {
+     "claude-code": 18,
+     "codex@gpt-6.1-sol": 20
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/Kludex/starlette": {
+    "ratio_per_solved": 1.4365833453089862,
+    "ratio_tokens": 1.2286742195933409,
+    "ratio_per_attempt": 1.0774375089817398,
+    "solved": {
+     "claude-code": 12,
+     "codex@gpt-6.1-sol": 9
+    },
+    "runs": {
+     "claude-code": 21,
+     "codex@gpt-6.1-sol": 21
+    },
+    "commits": 7
+   }
+  },
+  "p_holm": 1.0,
+  "headline": false,
+  "primary": "per_solved",
+  "ratio_per_attempt": 1.2330414285687803,
+  "ratio_per_attempt_ci": [
+   1.0372723229372072,
+   1.4652966461675254
+  ],
+  "arms": {
+   "claude-code": {
+    "setup": "claude-code",
+    "runs": 168,
+    "solved": 85,
+    "usd": 16.562148299999997,
+    "tokens": 28201706
+   },
+   "codex@gpt-6.1-sol": {
+    "setup": "codex@gpt-6.1-sol",
+    "runs": 168,
+    "solved": 96,
+    "usd": 20.421814999999995,
+    "tokens": 45286346
+   }
+  }
+ },
+ {
+  "baseline": "claude-code",
+  "challenger": "claude-code+rtk",
+  "repos": 8,
+  "commits": 56,
+  "solve_ci": {
+   "claude-code": [
+    0.4310671078829754,
+    0.5805715270135169
+   ],
+   "claude-code+rtk": [
+    0.4020482516127854,
+    0.5513972088012453
+   ]
+  },
+  "cost_per_attempt": {
+   "claude-code": 0.09858421607142856,
+   "claude-code+rtk": 0.09819760654761907
+  },
+  "ratio_per_solved": 1.0583332820869624,
+  "ratio_per_solved_ci": [
+   0.9391775626576205,
+   1.2616152072883489
+  ],
+  "ratio_tokens": 1.0109019291244294,
+  "ratio_tokens_ci": [
+   0.9352486554298028,
+   1.0910286191056187
+  ],
+  "p_per_solved": 0.7975,
+  "cheaper_in_repos": 4,
+  "per_repo": {
+   "https://github.com/axios/axios": {
+    "ratio_per_solved": 0.9992384037661046,
+    "ratio_tokens": 1.0188677980056666,
+    "ratio_per_attempt": 0.9992384037661046,
+    "solved": {
+     "claude-code": 12,
+     "claude-code+rtk": 12
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pallets/click": {
+    "ratio_per_solved": 3.1646323141362225,
+    "ratio_tokens": 1.076415427583154,
+    "ratio_per_attempt": 1.0548774380454076,
+    "solved": {
+     "claude-code": 3,
+     "claude-code+rtk": 1
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/homebridge/homebridge": {
+    "ratio_per_solved": 1.0867336826379441,
+    "ratio_tokens": 1.1471596492390863,
+    "ratio_per_attempt": 1.086733682637944,
+    "solved": {
+     "claude-code": 18,
+     "claude-code+rtk": 18
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/lint-staged/lint-staged": {
+    "ratio_per_solved": 0.7781056839649724,
+    "ratio_tokens": 0.9562384339918167,
+    "ratio_per_attempt": 0.9726321049562155,
+    "solved": {
+     "claude-code": 4,
+     "claude-code+rtk": 5
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/litestar-org/litestar": {
+    "ratio_per_solved": 1.036165506440077,
+    "ratio_tokens": 1.0265851725325899,
+    "ratio_per_attempt": 1.036165506440077,
+    "solved": {
+     "claude-code": 15,
+     "claude-code+rtk": 15
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/pyinfra-dev/pyinfra": {
+    "ratio_per_solved": 0.9794211647901476,
+    "ratio_tokens": 0.9912136195879981,
+    "ratio_per_attempt": 0.9794211647901476,
+    "solved": {
+     "claude-code": 3,
+     "claude-code+rtk": 3
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/recharts/recharts": {
+    "ratio_per_solved": 0.928844861569243,
+    "ratio_tokens": 0.8950125052840496,
+    "ratio_per_attempt": 0.8772423692598406,
+    "solved": {
+     "claude-code": 18,
+     "claude-code+rtk": 17
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   },
+   "https://github.com/Kludex/starlette": {
+    "ratio_per_solved": 1.2298529080748866,
+    "ratio_tokens": 0.9142606611024277,
+    "ratio_per_attempt": 0.922389681056165,
+    "solved": {
+     "claude-code": 12,
+     "claude-code+rtk": 9
+    },
+    "runs": {
+     "claude-code": 21,
+     "claude-code+rtk": 21
+    },
+    "commits": 7
+   }
+  },
+  "p_holm": 1.0,
+  "headline": false,
+  "primary": "tokens",
+  "ratio_per_attempt": 0.9960783831406705,
+  "ratio_per_attempt_ci": [
+   0.9360684084934687,
+   1.052795872990869
+  ],
+  "arms": {
+   "claude-code": {
+    "setup": "claude-code",
+    "runs": 168,
+    "solved": 85,
+    "usd": 16.562148299999997,
+    "tokens": 28201706
+   },
+   "claude-code+rtk": {
+    "setup": "claude-code+rtk",
+    "runs": 168,
+    "solved": 80,
+    "usd": 16.497197900000003,
+    "tokens": 28509159
+   }
+  }
+ },
+ {
+  "baseline": "chain-continue",
+  "challenger": "chain-fresh",
+  "repos": 8,
+  "commits": 16,
+  "solve_ci": {
+   "chain-continue": [
+    0.3257524219824218,
+    0.5970892555799516
+   ],
+   "chain-fresh": [
+    0.36389330403275494,
+    0.636106695967245
+   ]
+  },
+  "cost_per_attempt": {
+   "chain-continue": 0.08362094791666665,
+   "chain-fresh": 0.09432218958333338
+  },
+  "ratio_per_solved": 1.033975448403434,
+  "ratio_per_solved_ci": [
+   0.8436329151265957,
+   1.199730569186895
+  ],
+  "ratio_tokens": 0.838582118953051,
+  "ratio_tokens_ci": [
+   0.741424344350593,
+   0.9538517740021498
+  ],
+  "p_per_solved": 0.0,
+  "cheaper_in_repos": 0,
+  "per_repo": {
+   "https://github.com/axios/axios": {
+    "ratio_per_solved": 1.15132012433276,
+    "ratio_tokens": 0.7358963782750068,
+    "ratio_per_attempt": 1.15132012433276,
+    "solved": {
+     "chain-continue": 3,
+     "chain-fresh": 3
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   },
+   "https://github.com/pallets/click": {
+    "ratio_per_solved": null,
+    "ratio_tokens": 0.9466284360073673,
+    "ratio_per_attempt": 1.0876371901657556,
+    "solved": {
+     "chain-continue": 0,
+     "chain-fresh": 0
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   },
+   "https://github.com/homebridge/homebridge": {
+    "ratio_per_solved": 1.1665033074135875,
+    "ratio_tokens": 0.7315410672092993,
+    "ratio_per_attempt": 1.1665033074135875,
+    "solved": {
+     "chain-continue": 3,
+     "chain-fresh": 3
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   },
+   "https://github.com/lint-staged/lint-staged": {
+    "ratio_per_solved": 1.3647710265862163,
+    "ratio_tokens": 0.9146459210178602,
+    "ratio_per_attempt": 1.364771026586216,
+    "solved": {
+     "chain-continue": 1,
+     "chain-fresh": 1
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   },
+   "https://github.com/litestar-org/litestar": {
+    "ratio_per_solved": 1.1579208732990915,
+    "ratio_tokens": 0.9043834429205244,
+    "ratio_per_attempt": 1.1579208732990915,
+    "solved": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   },
+   "https://github.com/pyinfra-dev/pyinfra": {
+    "ratio_per_solved": null,
+    "ratio_tokens": 0.8550887869514378,
+    "ratio_per_attempt": 1.0267143809848975,
+    "solved": {
+     "chain-continue": 0,
+     "chain-fresh": 0
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   },
+   "https://github.com/recharts/recharts": {
+    "ratio_per_solved": 1.028699490377463,
+    "ratio_tokens": 0.7593895815803564,
+    "ratio_per_attempt": 1.028699490377463,
+    "solved": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   },
+   "https://github.com/Kludex/starlette": {
+    "ratio_per_solved": 0.8202586399238624,
+    "ratio_tokens": 0.8461012969458266,
+    "ratio_per_attempt": 1.3670977332064373,
+    "solved": {
+     "chain-continue": 3,
+     "chain-fresh": 5
+    },
+    "runs": {
+     "chain-continue": 6,
+     "chain-fresh": 6
+    },
+    "commits": 2
+   }
+  },
+  "p_holm": 0.0,
+  "headline": true,
+  "primary": "per_attempt",
+  "ratio_per_attempt": 1.12797321644011,
+  "ratio_per_attempt_ci": [
+   1.0480642969386296,
+   1.262383575684156
+  ],
+  "arms": {
+   "chain-continue": {
+    "setup": "chain-continue",
+    "runs": 48,
+    "solved": 22,
+    "usd": 4.013805499999999,
+    "tokens": 9175805
+   },
+   "chain-fresh": {
+    "setup": "chain-fresh",
+    "runs": 48,
+    "solved": 24,
+    "usd": 4.527465100000002,
+    "tokens": 7694666
+   }
+  }
+ }
+]

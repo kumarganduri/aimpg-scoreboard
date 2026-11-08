@@ -1,0 +1,51 @@
+{
+ "repos": [
+  {
+   "path": "repos/litestar",
+   "url": "https://github.com/litestar-org/litestar",
+   "qualifying": 14
+  },
+  {
+   "path": "repos/starlette",
+   "url": "https://github.com/Kludex/starlette",
+   "qualifying": 14
+  },
+  {
+   "path": "repos/click",
+   "url": "https://github.com/pallets/click",
+   "qualifying": 14
+  },
+  {
+   "path": "repos/pyinfra",
+   "url": "https://github.com/pyinfra-dev/pyinfra",
+   "qualifying": 14
+  },
+  {
+   "path": "repos/axios",
+   "url": "https://github.com/axios/axios",
+   "qualifying": 14
+  },
+  {
+   "path": "repos/lint-staged",
+   "url": "https://github.com/lint-staged/lint-staged",
+   "qualifying": 14
+  },
+  {
+   "path": "repos/recharts",
+   "url": "https://github.com/recharts/recharts",
+   "qualifying": 14
+  },
+  {
+   "path": "repos/homebridge",
+   "url": "https://github.com/homebridge/homebridge",
+   "qualifying": 14
+  }
+ ],
+ "replaced": [
+  {
+   "repo": "https://github.com/pydantic/pydantic",
+   "qualifying": 0,
+   "replaced_by": "https://github.com/litestar-org/litestar"
+  }
+ ]
+}

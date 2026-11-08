@@ -36,11 +36,11 @@ aimpg submit ~/.aimpg/verify/<the record>.record.json    # shows exactly what's 
 - **A number appears only when there's enough behind it:** at least 5 repos and 3 people, and nobody supplying more than half of the runs.
 - **Medians, never averages**, so one extreme repo can't swing a result.
 - **Trust tiers:**
-  - **Reproduced:** someone else reran a public record (`aimpg verify --rerun`) and got the same answer. Only these make the headline.
+  - **Reproduced:** someone else, from another account, reran a public record (`aimpg verify --rerun records/<user>/<id>.json`) with the same setups, task mode and commits, published their rerun, and got the same answer. Only these make the headline.
   - **Self-reported:** shown separately, labeled "not audited".
   - **Disputed:** a rerun disagreed. Both are shown; neither counts.
 - **Vendors:** records from accounts listed in [`vendors.json`](vendors.json) about their own product count only once reproduced by someone else. Please state your affiliation when you submit.
-- **Every run counts**, failures included. Incomplete records are rejected, and redone attempts are listed.
+- **Every run counts**, failures included. Incomplete records are rejected, and every redone attempt is listed in the raw record.
 
 **What this can't prove:** `aimpg verify --check` confirms a record's arithmetic and consistency, not that its
 runs happened. A determined person can fake a self-reported record, which is why only independent reruns reach
@@ -49,13 +49,13 @@ the headline.
 ## Withdraw
 
 Open a pull request that deletes your file under `records/<your-username>/`. The page rebuilds when it's merged.
-Copies others already downloaded can't be recalled.
+The record then leaves the scoreboard, but it stays in this repo's git history and in forks, and copies others already downloaded can't be recalled.
 
 ## How this repo works
 
 - `records/<github-username>/<sha256>.json`: one file per submission; the file name is the SHA-256 of its content.
 - `.github/workflows/validate.yml`: on every pull request, checks that you only add or delete your own files, then
-  runs `aimpg scoreboard validate`: format, privacy, consistency, complete runs and the verdict arithmetic.
+  runs `aimpg scoreboard validate`: format, a fixed list of allowed fields, privacy, consistency, complete runs, the verdict arithmetic, and that a repo id isn't another submitter's.
   It runs from this repo's own copy of the checks (`pull_request_target`), downloads only the submitted record
   files as data with a read-only token, and never runs anything from the pull request. Pull requests that touch
   `.github/` or `vendors.json` are never merged on a green check (CODEOWNERS).
