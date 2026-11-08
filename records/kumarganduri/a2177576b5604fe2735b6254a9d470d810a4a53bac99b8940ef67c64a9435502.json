@@ -1,0 +1,1045 @@
+{
+ "affiliation": null,
+ "aimpg_upload": 2,
+ "baseline": {
+  "agent": "claude",
+  "name": "claude-code"
+ },
+ "challenger": {
+  "agent": "claude",
+  "model": "claude-haiku-5-5",
+  "name": "claude-code@haiku"
+ },
+ "claim_kind": "model",
+ "excluded_commits": 0,
+ "kind": "verify",
+ "public": true,
+ "repo": "https://github.com/pallets/click.git",
+ "repo_id": "e55698fd6d8d611d807ad296",
+ "rerun_of": null,
+ "runs": [
+  {
+   "agent": "claude",
+   "commit": "93ba0075f4881b858b61f89a753c7c10e330027e",
+   "cost_known": true,
+   "cost_usd": 0.1,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    16,
+    14000,
+    160000,
+    3100
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.42,
+    5.55
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "93ba0075f4881b858b61f89a753c7c10e330027e",
+   "cost_known": true,
+   "cost_usd": 0.03,
+   "model": "claude-haiku-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    36,
+    72000,
+    900000,
+    28000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 110,
+   "wh": [
+    3.94,
+    35.84
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "93ba0075f4881b858b61f89a753c7c10e330027e",
+   "cost_known": true,
+   "cost_usd": 0.08,
+   "model": "claude-sonnet-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    12,
+    13000,
+    110000,
+    2800
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.38,
+    5.03
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "93ba0075f4881b858b61f89a753c7c10e330027e",
+   "cost_known": true,
+   "cost_usd": 0.03,
+   "model": "claude-haiku-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 1,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    42,
+    49000,
+    1000000,
+    32000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 110,
+   "wh": [
+    4.18,
+    37.8
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "93ba0075f4881b858b61f89a753c7c10e330027e",
+   "cost_known": true,
+   "cost_usd": 0.08,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    14,
+    13000,
+    130000,
+    2700
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.36,
+    4.82
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "93ba0075f4881b858b61f89a753c7c10e330027e",
+   "cost_known": true,
+   "cost_usd": 0.03,
+   "model": "claude-haiku-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 2,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    50,
+    45000,
+    1200000,
+    28000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 100,
+   "wh": [
+    3.67,
+    33.31
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "9f9b149ea30287b4977b800a024ee68144b8c869",
+   "cost_known": true,
+   "cost_usd": 0.01,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    12,
+    19000,
+    180000,
+    3900
+   ],
+   "tokens_check": "ok",
+   "wall_s": 20,
+   "wh": [
+    0.42,
+    4.11
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "9f9b149ea30287b4977b800a024ee68144b8c869",
+   "cost_known": true,
+   "cost_usd": 0.12,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    12,
+    15000,
+    100000,
+    6100
+   ],
+   "tokens_check": "ok",
+   "wall_s": 40,
+   "wh": [
+    0.64,
+    8.61
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "9f9b149ea30287b4977b800a024ee68144b8c869",
+   "cost_known": true,
+   "cost_usd": 0.09,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    14,
+    12000,
+    120000,
+    3600
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.41,
+    5.52
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "9f9b149ea30287b4977b800a024ee68144b8c869",
+   "cost_known": true,
+   "cost_usd": 0.01,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    16,
+    21000,
+    250000,
+    5300
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.56,
+    5.45
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "9f9b149ea30287b4977b800a024ee68144b8c869",
+   "cost_known": true,
+   "cost_usd": 0.12,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    12,
+    15000,
+    100000,
+    6100
+   ],
+   "tokens_check": "ok",
+   "wall_s": 40,
+   "wh": [
+    0.64,
+    8.57
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "9f9b149ea30287b4977b800a024ee68144b8c869",
+   "cost_known": true,
+   "cost_usd": 0.02,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    36,
+    28000,
+    680000,
+    11000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 60,
+   "wh": [
+    1.24,
+    11.69
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+   "cost_known": true,
+   "cost_usd": 0.11,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    18,
+    15000,
+    170000,
+    4000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 40,
+   "wh": [
+    0.5,
+    6.6
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+   "cost_known": true,
+   "cost_usd": 0.02,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    30,
+    34000,
+    580000,
+    17000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 70,
+   "wh": [
+    2.0,
+    18.48
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+   "cost_known": true,
+   "cost_usd": 0.11,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    20,
+    15000,
+    190000,
+    3800
+   ],
+   "tokens_check": "ok",
+   "wall_s": 50,
+   "wh": [
+    0.48,
+    6.39
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+   "cost_known": true,
+   "cost_usd": 0.02,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    32,
+    34000,
+    660000,
+    12000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 60,
+   "wh": [
+    1.44,
+    13.48
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+   "cost_known": true,
+   "cost_usd": 0.11,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    18,
+    14000,
+    160000,
+    4000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 40,
+   "wh": [
+    0.47,
+    6.29
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "07c909f23f0f83b5ca137c167b9a134d66201f67",
+   "cost_known": true,
+   "cost_usd": 0.02,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    38,
+    39000,
+    840000,
+    17000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 80,
+   "wh": [
+    2.14,
+    19.66
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "3495fba163dd61dea837cd557095df6c21515ac8",
+   "cost_known": true,
+   "cost_usd": 0.17,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    32,
+    18000,
+    340000,
+    6000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 60,
+   "wh": [
+    0.71,
+    9.33
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "3495fba163dd61dea837cd557095df6c21515ac8",
+   "cost_known": true,
+   "cost_usd": 0.04,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    52,
+    50000,
+    1300000,
+    33000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 140,
+   "wh": [
+    4.46,
+    40.19
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "3495fba163dd61dea837cd557095df6c21515ac8",
+   "cost_known": true,
+   "cost_usd": 0.16,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    30,
+    16000,
+    310000,
+    5300
+   ],
+   "tokens_check": "ok",
+   "wall_s": 60,
+   "wh": [
+    0.63,
+    8.34
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "3495fba163dd61dea837cd557095df6c21515ac8",
+   "cost_known": true,
+   "cost_usd": 0.03,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    52,
+    43000,
+    1200000,
+    33000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 120,
+   "wh": [
+    4.13,
+    37.43
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "3495fba163dd61dea837cd557095df6c21515ac8",
+   "cost_known": true,
+   "cost_usd": 0.18,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    32,
+    18000,
+    350000,
+    6200
+   ],
+   "tokens_check": "ok",
+   "wall_s": 60,
+   "wh": [
+    0.74,
+    9.68
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "3495fba163dd61dea837cd557095df6c21515ac8",
+   "cost_known": true,
+   "cost_usd": 0.04,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    56,
+    47000,
+    1300000,
+    38000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 140,
+   "wh": [
+    4.71,
+    42.61
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "7a0a3447f6ddd2c15438c5d098e289323f9f9556",
+   "cost_known": true,
+   "cost_usd": 0.01,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "1-5",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    10,
+    29000,
+    160000,
+    6800
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.83,
+    7.94
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "7a0a3447f6ddd2c15438c5d098e289323f9f9556",
+   "cost_known": true,
+   "cost_usd": 0.09,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    16,
+    13000,
+    150000,
+    2700
+   ],
+   "tokens_check": "ok",
+   "wall_s": 40,
+   "wh": [
+    0.36,
+    4.81
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "7a0a3447f6ddd2c15438c5d098e289323f9f9556",
+   "cost_known": true,
+   "cost_usd": 0.01,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "1-5",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    10,
+    23000,
+    150000,
+    5400
+   ],
+   "tokens_check": "ok",
+   "wall_s": 20,
+   "wh": [
+    0.59,
+    5.71
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "7a0a3447f6ddd2c15438c5d098e289323f9f9556",
+   "cost_known": true,
+   "cost_usd": 0.1,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    18,
+    14000,
+    170000,
+    3400
+   ],
+   "tokens_check": "ok",
+   "wall_s": 30,
+   "wh": [
+    0.44,
+    5.84
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "7a0a3447f6ddd2c15438c5d098e289323f9f9556",
+   "cost_known": true,
+   "cost_usd": 0.07,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    12,
+    11000,
+    100000,
+    2500
+   ],
+   "tokens_check": "ok",
+   "wall_s": 20,
+   "wh": [
+    0.31,
+    4.21
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "7a0a3447f6ddd2c15438c5d098e289323f9f9556",
+   "cost_known": true,
+   "cost_usd": 0.01,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    14,
+    22000,
+    220000,
+    5400
+   ],
+   "tokens_check": "ok",
+   "wall_s": 20,
+   "wh": [
+    0.58,
+    5.61
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "051725fa7e0c69effc9107066d8791c5b99242c3",
+   "cost_known": true,
+   "cost_usd": 0.2,
+   "model": "claude-sonnet-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    30,
+    20000,
+    350000,
+    7600
+   ],
+   "tokens_check": "ok",
+   "wall_s": 70,
+   "wh": [
+    0.89,
+    11.61
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "051725fa7e0c69effc9107066d8791c5b99242c3",
+   "cost_known": true,
+   "cost_usd": 0.03,
+   "model": "claude-haiku-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    38,
+    46000,
+    940000,
+    34000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 110,
+   "wh": [
+    4.33,
+    39.18
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "051725fa7e0c69effc9107066d8791c5b99242c3",
+   "cost_known": true,
+   "cost_usd": 0.17,
+   "model": "claude-sonnet-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    30,
+    19000,
+    350000,
+    5300
+   ],
+   "tokens_check": "ok",
+   "wall_s": 60,
+   "wh": [
+    0.69,
+    9.0
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "051725fa7e0c69effc9107066d8791c5b99242c3",
+   "cost_known": true,
+   "cost_usd": 0.02,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    34,
+    38000,
+    760000,
+    25000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 90,
+   "wh": [
+    2.96,
+    27.11
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "051725fa7e0c69effc9107066d8791c5b99242c3",
+   "cost_known": true,
+   "cost_usd": 0.13,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    16,
+    16000,
+    160000,
+    5600
+   ],
+   "tokens_check": "ok",
+   "wall_s": 40,
+   "wh": [
+    0.64,
+    8.45
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "051725fa7e0c69effc9107066d8791c5b99242c3",
+   "cost_known": true,
+   "cost_usd": 0.03,
+   "model": "claude-haiku-5-5",
+   "outcome": "passed",
+   "passed": true,
+   "repeat": 2,
+   "requests": "6-20",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    30,
+    46000,
+    710000,
+    33000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 100,
+   "wh": [
+    4.36,
+    39.34
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "fbdd434028fe07ecf35084c945b43b938dfd639f",
+   "cost_known": true,
+   "cost_usd": 0.2,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    30,
+    19000,
+    310000,
+    8600
+   ],
+   "tokens_check": "ok",
+   "wall_s": 70,
+   "wh": [
+    0.92,
+    12.14
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "fbdd434028fe07ecf35084c945b43b938dfd639f",
+   "cost_known": true,
+   "cost_usd": 0.04,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 0,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    58,
+    48000,
+    1400000,
+    34000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 140,
+   "wh": [
+    4.32,
+    39.1
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "fbdd434028fe07ecf35084c945b43b938dfd639f",
+   "cost_known": true,
+   "cost_usd": 0.2,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "6-20",
+   "setup": "claude-code",
+   "tokens": [
+    30,
+    20000,
+    330000,
+    8000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 60,
+   "wh": [
+    0.92,
+    11.92
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "fbdd434028fe07ecf35084c945b43b938dfd639f",
+   "cost_known": true,
+   "cost_usd": 0.03,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 1,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    46,
+    50000,
+    1100000,
+    36000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 130,
+   "wh": [
+    4.62,
+    41.78
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "fbdd434028fe07ecf35084c945b43b938dfd639f",
+   "cost_known": true,
+   "cost_usd": 0.25,
+   "model": "claude-sonnet-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "21-50",
+   "setup": "claude-code",
+   "tokens": [
+    42,
+    23000,
+    500000,
+    9200
+   ],
+   "tokens_check": "ok",
+   "wall_s": 90,
+   "wh": [
+    1.08,
+    13.87
+   ]
+  },
+  {
+   "agent": "claude",
+   "commit": "fbdd434028fe07ecf35084c945b43b938dfd639f",
+   "cost_known": true,
+   "cost_usd": 0.05,
+   "model": "claude-haiku-5-5",
+   "outcome": "tests_failed",
+   "passed": false,
+   "repeat": 2,
+   "requests": "21-50",
+   "setup": "claude-code@haiku",
+   "tokens": [
+    56,
+    61000,
+    1500000,
+    49000
+   ],
+   "tokens_check": "ok",
+   "wall_s": 170,
+   "wh": [
+    7.0,
+    62.48
+   ]
+  }
+ ],
+ "superseded_attempts": 0,
+ "task_mode": "hint",
+ "verdict": {
+  "answer": "SUPPORTED",
+  "cost_ratio": 0.11,
+  "energy": null
+ },
+ "versions": {
+  "aimpg": "0.6.3",
+  "claude": "2.1",
+  "codex": "0.159",
+  "factors": "2026-10-03b",
+  "prices": "2026-10-11"
+ },
+ "week": "2026-W42"
+}
