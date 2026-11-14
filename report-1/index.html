@@ -117,6 +117,11 @@ adds is which setups those few passes came from.</p>
 Haiku isn't cheap because it gives up early either. Its failed runs took more requests and more time than Sonnet's (13 requests and 120 seconds, against 8 and 60).</li>
 <li><b>"Opus 5.5 costs 2.6× as much per solved task" hides something.</b> On the hard tasks, Haiku solved 0 of 66 runs, Sonnet 0 of 66, Opus 8 of 66 and Codex 4 of 66.
 For those tasks the choice isn't between a cheap and a dear solution. The cheaper models didn't solve them at all.</li>
+<li><b>"Hard" here partly means thinly described</b> (added later the same day). The task an agent gets is the commit message. The hard tasks'
+messages had a median of 7.5 words, and the easy ones 93. Tasks described in 50 words or more were solved in
+47 of 57 runs by Haiku, 51 of 57 by Sonnet and 53 of 57 by Opus. Tasks described in under 15 words were solved in
+33 of 96, 33 of 96 and 47 of 96. So part of what the hard tasks test is working out what is wanted from very little, and that
+is where Opus pulled ahead. Each task's description length and size are in <a href="data/tasks.json">data/tasks.json</a>.</li>
 <li><b>The task set separates the models poorly.</b> 27 tasks were easy for every setup and 22 were too hard for most, which leaves 7 in between.
 The counts on hard tasks are small, so read them as a pattern to test, not as a measured rate. Report No. 2 will report results by difficulty from the start.</li>
 </ul>
