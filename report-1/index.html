@@ -103,6 +103,24 @@ finding status:
 </ul>
 <p>All of these are dated in the pre-registration's change and deviation lists.</p>
 
+<h2>Added after publication: results by task difficulty</h2>
+<p><b>Added 2026-11-14. This was not pre-registered, and the groups were chosen after seeing the data.</b> A reader pointed out that cost per
+solved task can flatter a cheap model: if it only solves the tasks every model solves, it looks efficient while never solving a hard one.
+So here are the same runs grouped by how hard each of the 56 tasks turned out to be, counted as passing runs across four setups
+(3 runs each, so 0 to 12). The groups are made from the same runs they describe, so a hard task has few passes by definition. What the table
+adds is which setups those few passes came from.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Tasks</th><th>How many</th><th>Haiku 5.5</th><th>Sonnet 5.5</th><th>Opus 5.5</th><th>Codex (gpt-6.1-sol)</th></tr></thead>
+<tbody><tr><th scope="row">Easy<small>10 to 12 of 12 runs passed</small></th><td class="num">27</td><td class="num">76 of 81</td><td class="num">80 of 81</td><td class="num">81 of 81</td><td class="num">79 of 81</td></tr><tr><th scope="row">In between<small>3 to 9</small></th><td class="num">7</td><td class="num">7 of 21</td><td class="num">5 of 21</td><td class="num">14 of 21</td><td class="num">13 of 21</td></tr><tr><th scope="row">Hard<small>0 to 2</small></th><td class="num">22</td><td class="num">0 of 66</td><td class="num">0 of 66</td><td class="num">8 of 66</td><td class="num">4 of 66</td></tr></tbody></table></div>
+<ul>
+<li><b>Haiku 5.5 against Sonnet 5.5 stands.</b> Sonnet solved 0 tasks that Haiku never solved, and Haiku solved 1 that Sonnet never did, so they solve almost the same set.
+Haiku isn't cheap because it gives up early either. Its failed runs took more requests and more time than Sonnet's (13 requests and 120 seconds, against 8 and 60).</li>
+<li><b>"Opus 5.5 costs 2.6× as much per solved task" hides something.</b> On the hard tasks, Haiku solved 0 of 66 runs, Sonnet 0 of 66, Opus 8 of 66 and Codex 4 of 66.
+For those tasks the choice isn't between a cheap and a dear solution. The cheaper models didn't solve them at all.</li>
+<li><b>The task set separates the models poorly.</b> 27 tasks were easy for every setup and 22 were too hard for most, which leaves 7 in between.
+The counts on hard tasks are small, so read them as a pattern to test, not as a measured rate. Report No. 2 will report results by difficulty from the start.</li>
+</ul>
+
 <h2>Check it yourself</h2>
 <ul>
 <li><b>Raw data:</b> <a href="data/">every run record</a> (outcome, tokens per request, cost and time), the selection lists, the pilot runs and <a href="data/report.json">the analysis output</a>.</li>
